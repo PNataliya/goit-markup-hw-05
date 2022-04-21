@@ -185,6 +185,26 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
+/* ===============================
+подчеркивание на активной странице - start 
+=================================*/
+.site-nav.current {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.active-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: var(--accent-color);
+  
+}
+
 
 /* ==============================
 кнопки навигация по сайту - end 
@@ -193,6 +213,7 @@ body {
 /* ===============================
 ссылки на e-mail и тел - start 
 ================================ */
+
 
 .link-head-contact {
   display: flex;
@@ -232,6 +253,11 @@ body {
 
 .current > .link {
   color: var(--accent-color);
+}
+
+
+.icon-page {
+  fill: currentColor;
 }
 
 
@@ -815,6 +841,7 @@ SECTION Portfolio - start
   height: 100%;
   background-color: var(--bg-color-portfolio-thumb);
   opacity: 0;
+  transition: 250ms opacity linear;
 }
 
 .box-action-text {
@@ -824,8 +851,8 @@ SECTION Portfolio - start
   color: var(--wight-color)
 }
 
-.portfolio-list:hover.box-action,
-.portfolio-list:focus.box-action {
+.portfolio-thumb:hover .box-action,
+.portfolio-thumb:hover .box-action {
   opacity: 1;
 }
 /* =================================== 
@@ -834,7 +861,7 @@ SECTION Portfolio - start
 
 .portfolio-list:hover,
 .portfolio-list:focus {
-  box-shadow: var(--box-shadow-portfolio-list)
+  box-shadow: var(--box-shadow-portfolio-list);
 }
 
 .portfolio-box {
