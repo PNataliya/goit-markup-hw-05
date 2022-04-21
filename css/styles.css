@@ -781,8 +781,8 @@ SECTION Portfolio - start
 /* ===================================
 таблица с картинками ПОРТФОЛИО - start
 =================================== */
-
 .portfolio-list {
+  cursor: pointer;
   margin-right: 30px;
   margin-bottom: 30px;
   background-color: var(--white-color);
@@ -796,13 +796,16 @@ SECTION Portfolio - start
   margin-right: 0px;
 }
 
+/* =================================== 
+декоративный overlay на карточку - start
+==================================== */
 .portfolio-thumb {
   position: relative;
   display: flex;
+  
 }
 
 .box-action {
-  display: block;
   padding: 63px 24px;
   position: absolute;
   left: 0;
@@ -810,7 +813,7 @@ SECTION Portfolio - start
   width: 100%;
   height: 100%;
   background-color: var(--bg-color-portfolio-thumb);
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 .box-action-text {
@@ -823,20 +826,24 @@ SECTION Portfolio - start
 .portfolio-list:hover.box-action,
 .portfolio-list:focus.box-action {
   opacity: 1;
+}
+/* =================================== 
+декоративный overlay на карточку - END
+==================================== */
 
 .portfolio-list:hover,
 .portfolio-list:focus {
-box-shadow: var(--box-shadow-portfolio-list)
+  box-shadow: var(--box-shadow-portfolio-list)
 }
 
 .portfolio-box {
-    padding: 20px 24px;
-    border-left: 1px solid #eeeeee;
-    border-right: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee;
-    background-color: var(--wight-color);
-  }
-  
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  background-color: var(--wight-color);
+}
+
 .portfolio-title {
   margin-bottom: 4px;
   font-size: 18px;
@@ -844,6 +851,7 @@ box-shadow: var(--box-shadow-portfolio-list)
   letter-spacing: 0.06em;
   color: var(--title-text-color);
 }
+
 .portfolio-text {
   font-size: 16px;
   line-height: 1.87;
