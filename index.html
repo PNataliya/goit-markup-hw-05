@@ -24,14 +24,9 @@
             <nav class="navigate">
                 <a class="logo" href="./index.html"><span class="logo-accent">Web</span>Studio</a>
                 <ul class="list flex">
-                    <li class="site-nav current"><a href="./index.html" class="link">Студия</a>
-                    <!-- подчеркивание на активной странице - start  -->
-                    <div class="active-icon">
-                        <svg class="icon-page" width="48" height="4">
-                            <use href="./images/icons.svg#hover_page"></use>
-                        </svg>
-                    </div>
-                    <!-- подчеркивание на активной странице - END  -->
+                <!-- подчеркивание на активной странице - start  -->
+                    <li class="site-nav current">
+                        <a href="./index.html" class="link active">Студия</a>
                     </li>
         
                     <li class="site-nav"><a href="./portfolio.html" class="link">Портфолио</a></li>
@@ -72,7 +67,20 @@
                         <br>
                         ДЛЯ ВАШЕГО БИЗНЕСА
                     </h1>
-                    <button class="btn hero-button" type="button">Заказать услугу</button>
+                    <button  class="btn hero-button" type="button" data-modal-open>Заказать услугу</button>
+                    <!-- Модальное окно - start -->
+                    <div class="backdrop is-hidden" data-modal>
+                        <div class="modal">  
+                            
+                                <svg class="close-svg" width="48" height="4">
+                                    <use href="./images/icons.svg#close_modal"></use>
+                                </svg>
+                          
+                            <button class="close-modal" tupe="button" data-modal-close>
+                               </button>
+                        </div>
+                    </div>
+                    <!-- Модальное окно - END -->
                 </div>
         </section>
 
@@ -439,6 +447,8 @@
             </ul>
         </div>
     </footer>
+    <script src="./js/modal.js"></script>
+
 </body>
 
 </html>
