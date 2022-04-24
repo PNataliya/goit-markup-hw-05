@@ -92,6 +92,8 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+  transition: color 250ms
+  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item:hover,
@@ -200,36 +202,15 @@ padding-bottom: 32px;
 }
 
 .active::after {
+  position: absolute;
   content: '';
+  left: 0;
+  bottom: -1%;
   width: 100%;
   height: 4px;
   background: #2196F3;
-  border-radius: 2px;
-  position: absolute;
-  left: 0;
-  bottom: -1%;
+  border-radius: 2px; 
 }
-
-/* ============ */
-
-/* .site-nav.current {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-}
-
-.active-icon {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  left: 0;
-  bottom: -1%;
-  
-  color: var(--accent-color);
-} */
-
-
 
 
 /* ==============================
@@ -252,6 +233,8 @@ padding-bottom: 32px;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms
+  cubic-bezier(0.4, 0, 0.2, 1);
 }
  
 .link-head-contact {
@@ -275,6 +258,8 @@ padding-bottom: 32px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
+  transition: color 250ms
+  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current >.link {
@@ -297,6 +282,8 @@ padding-bottom: 32px;
 =================================  */
 .contact-icon {
   margin-right: 10px;
+  transition: color 250ms
+  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-head-contact:hover.contact-icon,
@@ -395,6 +382,7 @@ Button Заказать услугу - start
   text-align: center;
   color: var(--wight-color);
   background-color: var(--accent-color);
+  
 }
 
 /* =========================
@@ -432,7 +420,14 @@ box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
 0px 1px 1px rgba(0, 0, 0, 0.14),
 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 4px;
+transform: translate(-50%, -50%) scaleX(1);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* анимация модального окна */
+.backdrop.is-hidden .modal {
+  transform: translate(50%, 50%) scaleX(1);
+}
+/* ========================= */
 
 .close-modal {
   position: absolute;
@@ -447,6 +442,7 @@ border-radius: 4px;
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer; 
+  
 } 
 
 
@@ -458,58 +454,6 @@ border-radius: 4px;
   height: 30px;
 }
 
-/* 
-.is-hidden {
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
-}
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 528px;
-  height: 581px;
-  transition: transform 250ms ease;
-  border-radius: 4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-}
-
-.backdrop.is-hidden>.modal {
-  transform: translate(-50%, -50%) scale(0.9);
-}
-
-.backdrop>.modal {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.close-modal {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background: #FFFFFF;
-} */
 
 /* ================
 section Герой - end 
@@ -705,11 +649,14 @@ ICON social-link - start
   height: 44px;
   border-radius: 50%;
   background-color: transparent;
+  transition: background-color 250ms
+  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link:hover,
 .socials-link:focus {
   background-color: var(--accent-color);
+
 }
 
 .socials-icon {
@@ -738,7 +685,6 @@ SECTION Постоянные клиенты - start
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
-
   color: var(--title-text-color);
 }
 
@@ -764,6 +710,8 @@ SECTION Постоянные клиенты - start
   color: var(--bg-icon);
   border-radius: 4px;
   cursor: pointer;
+  transition: color 250ms
+  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -871,6 +819,8 @@ margin-right: 70px;
   height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms
+  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-socials-link:hover,
@@ -928,6 +878,7 @@ SECTION Portfolio - start
 
   color: var(--title-text-color);
   background-color: #f5f4fa;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-filter:hover,
@@ -935,6 +886,7 @@ SECTION Portfolio - start
   color: var(--wight-color);
   background-color: var(--accent-color);
   box-shadow: var(--box-shadow-active-btn-filter);
+  
 }
 /* ================ 
 фильтр Кнопки - end
@@ -948,6 +900,7 @@ SECTION Portfolio - start
   margin-right: 30px;
   margin-bottom: 30px;
   background-color: var(--white-color);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .list.flex>.portfolio-list {
@@ -975,9 +928,11 @@ SECTION Portfolio - start
   width: 100%;
   height: 100%;
   background-color: var(--bg-color-portfolio-thumb);
-  opacity: 0;
-  transition: 250ms opacity linear;
+  opacity: 0; 
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .box-action-text {
   font-size: 18px;
@@ -989,8 +944,7 @@ SECTION Portfolio - start
 .portfolio-list:hover.portfolio-thumb >.box-action,
 .portfolio-list:hover .portfolio-thumb > .box-action {
   opacity: 1;
-  /* visibility: visible;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transform: translateY(0);
 }
 /* =================================== 
 декоративный overlay на карточку - END
