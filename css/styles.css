@@ -189,16 +189,16 @@ body {
 }
 /* ===============================
 подчеркивание на активной странице - start 
-=================================*/
+===============================  */
 
 .site-nav.current {
   padding: 0;
 }
 .link.active {
   position: relative;
-display: block;
-padding-top: 32px;
-padding-bottom: 32px;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .active::after {
