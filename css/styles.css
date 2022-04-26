@@ -32,6 +32,13 @@ body {
 /* =======================
 общие классы - start 
 ======================== */
+img {
+  display: block;
+}
+
+p {
+  margin: 0;
+}
 
 .link {
   text-decoration: none;
@@ -233,13 +240,11 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  color: var(--primary-text-color);
   transition: color 250ms
   cubic-bezier(0.4, 0, 0.2, 1);
 }
- 
-.link-head-contact {
-  color: var(--primary-text-color);
-}
+
 
 .link.link-head-contact:hover,
 .link.link-head-contact:focus {
@@ -282,17 +287,16 @@ body {
 =================================  */
 .contact-icon {
   margin-right: 10px;
-  transition: color 250ms
-  cubic-bezier(0.4, 0, 0.2, 1);
+  fill: currentColor
+  
 }
 
 .link-head-contact:hover.contact-icon,
 .link-head-contact:focus.contact-icon {
   color: var(--accent-color);
 }
-.contact-icon {
-  fill: currentColor
-}
+
+
 /* ================================
 иконки конверт и телефон - end 
 ================================= */
@@ -382,8 +386,13 @@ Button Заказать услугу - start
   text-align: center;
   color: var(--wight-color);
   background-color: var(--accent-color);
-  
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.hero-button:hover,
+.hero-button:focus {
+  background-color: #188CE8;
+}
+
 
 /* =========================
 Button Заказать услугу - end 
@@ -436,6 +445,7 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
   top: 8px;
   right: 8px;
   width: 30px;
@@ -449,11 +459,10 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 .close-svg {
-  position: absolute;
+  /* position: absolute;
   top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
+  right: 8px; */
+  
 }
 
 
@@ -493,12 +502,14 @@ SECTION Преимущества - start
 }
 .box-icon {
   display: flex;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
   height: 120px;
   background-color: var(--bg-color-section);
   border-radius: 4px;
 }
+
 .icon.svg {
   margin: auto;
 }
@@ -541,27 +552,21 @@ SECTION Чем мы занимаемся - start
   color: var(--title-text-color);
 }
 
+.specialization-item {
+  position: relative;
+}
+
 .specialization-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.card {
-  display: flex;
-  position: relative;
-  align-items: flex-end;
-}
-
-.card-action {
-  position: absolute;
-  display: flex;
-  width: 100%;
-  padding: 27px 82px;
-  justify-content: center;
-  align-items: center;
-  background: rgba(47, 48, 58, 0.8);
-}
 
 .card-title {
+  position: absolute;
+  padding: 27px 0;
+  width: 100%;
+  left: 0;
+  bottom: 0;
   margin: 0;
   font-weight: 700;
   font-size: 14px;
@@ -569,8 +574,8 @@ SECTION Чем мы занимаемся - start
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-
   color: var(--wight-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 /* ==============================
 SECTION Чем мы занимаемся - end 
@@ -658,17 +663,18 @@ ICON social-link - start
 .socials-link:hover,
 .socials-link:focus {
   background-color: var(--accent-color);
-
 }
 
 .socials-icon {
-  fill: var(--bg-icon)
+  fill: var(--bg-icon);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link:hover .socials-icon,
 .socials-link:focus .socials-icon {
   fill: #ffffff;
 }
+
 /* ======================= 
 ICON social-link - end
 ======================== */
@@ -714,6 +720,7 @@ SECTION Постоянные клиенты - start
   cursor: pointer;
   transition: color 250ms
   cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -898,17 +905,15 @@ SECTION Portfolio - start
 таблица с картинками ПОРТФОЛИО - start
 =================================== */
 .portfolio-list {
+  flex-basis: calc(100% / 3 - 30px);
   cursor: pointer;
   margin-right: 30px;
   margin-bottom: 30px;
-  background-color: var(--white-color);
+  background-color: var(--wight-color);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1)
   
 }
 
-.list.flex>.portfolio-list {
-  flex-basis: calc(100% / 3 - 30px);
-}
 
 .portfolio-list:nth-child(3n) {
   margin-right: 0px;
